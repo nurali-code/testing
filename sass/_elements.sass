@@ -1,0 +1,281 @@
+*
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+    border: none
+    outline: none
+
+:root
+    --prime: #303F9F
+    --white: #fff
+    --balck: #2F2F2F
+    --dark: #000
+    --gray: #747474
+    --neutral: #C3C3C3
+    --bg: #FAFAFA
+
+$alfa: rgba(0, 0, 0, 0)
+$prime: var(--prime)
+$black: var(--balck)
+$dark: var(--dark)
+$white: var(--white)
+$gray: var(--gray)
+$neutral: var(--neutral)
+$bg: var(--bg)
+
+body, html
+    font-family: "Manrope", sans-serif
+    font-weight: 400
+    font-style: normal
+    font-optical-sizing: auto
+    color: $black
+
+body
+    min-height: 100vh
+    background-color: $bg
+    position: relative
+    z-index: 1
+    // background-repeat: no-repeat
+    // background-position: center center
+    // background-size: cover
+    // background-image: url('../media/bg.svg')
+    &.is_active
+        overflow: hidden
+
+.container
+    max-width: 1400px
+    width: 100%
+    margin: 0 auto
+    padding: 0 20px
+
+img
+    display: block
+    max-width: 100%
+
+a,
+button
+    color: $black
+    text-decoration: none
+    transition: all ease .3s
+    background-color: transparent
+    &:hover
+        opacity: .5
+
+    &:active
+        opacity: 1
+        transform: scale(.98)
+
+p
+    font-size: 16px
+    font-weight: 400
+    font-family: "Inter", sans-serif
+    line-height: 115%
+    letter-spacing: 0%
+    margin-bottom: 12px
+    &.--md
+        font-weight: 400
+        font-size: 20px
+        letter-spacing: .3px
+        margin-bottom: 20px
+
+    &:last-child
+        margin-bottom: 0 !important
+
+.btn
+    font-weight: 600
+    font-size: 18px
+    line-height: 100%
+    gap: 10px
+    min-height: 53px
+    min-width: 248px
+    width: fit-content
+    border-radius: 8px
+    padding: 14px 28px
+    text-align: center
+    color: white
+    background-color: $prime
+    &.--sm
+        min-height: 35px
+        padding: 8px 14px
+        font-size: 16px
+        border-radius: 6px
+        min-width: unset
+
+    &.--md
+        padding: 12px 24px
+        min-width: 129px
+        min-height: 46px
+
+    &:active
+        opacity: 1
+
+    &:disabled
+        background-color: #E7E7F0
+        cursor: progress
+
+    @media screen and ( max-width: 720px )
+        font-size: 16px
+        min-height: 43px
+        padding: 8px 16px
+        min-width: 129px
+        border-radius: 6px
+
+        &.--md
+            font-size: 12px
+            padding: 8px 16px
+            min-width: 85px
+            min-height: 32px
+
+        &.--sm
+            min-height: 30px
+            font-size: 14px
+            padding: 5px 10px
+
+.link
+    font-size: 16px
+    line-height: 100%
+    color: $prime
+    &:hover
+        text-decoration: underline
+
+    @media screen and ( max-width: 720px )
+        font-size: 14px
+
+.w-full
+    width: 100% !important
+
+.c
+    &-base
+        color: $black
+    &-prime
+        color: $prime
+
+ul
+    list-style: none
+
+[class^=fx-], [class*=" fx-"], .btn, body, .fx
+    display: flex
+
+.fx-col, body
+    flex-direction: column
+
+.fx-jc, .btn
+    justify-content: center
+.fx-ac, .btn
+    align-items: center
+.fx
+    &-ac
+        align-items: center
+
+    &-je
+        justify-content: flex-end
+
+    &-col
+        flex-direction: column
+
+    &-w
+        flex-wrap: wrap
+
+    &-as
+        align-items: flex-start
+
+    &-jb
+        justify-content: space-between
+
+    &-ae
+        align-items: end
+
+label
+    display: block
+    font-family: "Inter", sans-serif
+    font-size: 12px
+    line-height: 100%
+    margin-bottom: 5px
+
+input
+    border: 1px solid #2F2F2F26
+    height: 68px
+    width: 100%
+    font-weight: normal
+    padding: 0 14px
+    font-family: "Inter", sans-serif
+    background-color: $white
+    font-size: 16px
+    &:focus
+        border-color: $black
+
+    &:placeholder-shown
+        border-color: $neutral
+        &:focus
+            border-color: $black
+
+    &::placeholder
+        color: #9E9EAB
+
+.inp-check
+    position: relative
+    z-index: 1
+    margin-bottom: 31px
+    label
+        font-weight: 500
+        font-size: 12px
+        line-height: 15px
+        display: block
+        position: relative
+        text-align: left
+        z-index: 1
+        padding: 0 0 0 23px
+        &::before
+            content: ""
+            display: inline-block
+            position: absolute
+            box-sizing: border-box
+            left: 0
+            top: 0
+            width: 15px
+            height: 15px
+            border: 1px solid $neutral
+
+            background-repeat: no-repeat
+            background-position: center center
+            background-size: 0% auto
+            background-image: url('../media/check.svg')
+
+    input
+        display: block
+        position: absolute
+        top: 0
+        left: 0
+        margin: 0
+        opacity: 0
+        padding: 0
+        min-height: 100%
+        width: 100%
+        cursor: pointer
+        height: 100%
+        z-index: 111
+        &:checked ~ label::before
+            background-size: 75% auto
+            border-color: $prime
+
+mark
+    color: $prime
+    background-color: $alfa
+
+@keyframes fadeIn
+    0%
+        opacity: 0
+        transform: translateY(20px)
+    100%
+        opacity: 1
+        transform: translateY(0px)
+
+@media screen and ( max-width: 992px )
+    p
+        font-size: 14px
+        &.--md
+            font-size: 16px
+
+@media screen and ( max-width: 720px )
+    input
+        font-size: 14px

@@ -1,0 +1,120 @@
+.audio
+    &-player
+        background-color: #ffffff
+        border-radius: 8px
+        padding: 10px 15px
+        display: flex
+        align-items: center
+        gap: 10px
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1)
+        width: 100%
+        max-width: 450px
+        position: relative
+
+        button
+            background: none
+            border: none
+            cursor: pointer
+            padding: 5px
+            font-size: 16px
+            color: #555
+
+            &:hover
+                color: #000
+
+        .play-pause-btn i
+            font-size: 18px
+
+        .time-container
+            font-size: 13px
+            color: #666
+            min-width: 70px
+            text-align: center
+
+        .progress-bar
+            flex-grow: 1
+            cursor: pointer
+            height: 6px
+            appearance: none
+            background: #e0e0e0
+            border-radius: 3px
+            outline: none
+
+            &::-webkit-slider-thumb
+                appearance: none
+                width: 14px
+                height: 14px
+                background: #3498db
+                border-radius: 50%
+                cursor: pointer
+
+            &::-moz-range-thumb
+                width: 14px
+                height: 14px
+                background: #3498db
+                border-radius: 50%
+                cursor: pointer
+                border: none
+
+        .volume-container
+            display: flex
+            align-items: center
+
+        .volume-slider
+            width: 60px
+            height: 4px
+            cursor: pointer
+            appearance: none
+            background: #e0e0e0
+            border-radius: 2px
+            outline: none
+            margin-left: 5px
+
+            &::-webkit-slider-thumb
+                appearance: none
+                width: 10px
+                height: 10px
+                background: #555
+                border-radius: 50%
+                cursor: pointer
+
+            &::-moz-range-thumb
+                width: 10px
+                height: 10px
+                background: #555
+                border-radius: 50%
+                cursor: pointer
+                border: none
+
+        .options-btn
+            margin-left: auto
+
+        .options-menu
+            display: none
+            position: absolute
+            bottom: 45px
+            right: 10px
+            background-color: white
+            border-radius: 5px
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2)
+            padding: 10px
+            z-index: 10
+            font-size: 14px
+
+            & a, & div
+                display: block
+                padding: 5px 0
+                color: #333
+                text-decoration: none
+
+            & a:hover
+                background-color: #f0f0f0
+
+        .speed-control select
+            margin-left: 5px
+            border: 1px solid #ccc
+            border-radius: 3px
+            padding: 2px
+
+    &-element
+        display: none

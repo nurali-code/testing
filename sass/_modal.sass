@@ -1,0 +1,106 @@
+.modal
+    // display: none
+    position: fixed
+    top: 0
+    left: 0
+    height: 100%
+    width: 100vw
+    z-index: 99999
+    background-color: rgba(#141414, .5)
+    backdrop-filter: blur(2px)
+    padding: 20px
+    box-sizing: border-box
+    overflow-y: scroll
+
+    transition: all ease .4s
+    opacity: 0
+    visibility: hidden
+
+    &-content
+        min-height: 100px
+        display: block
+        background-color: $bg
+        transition: transform ease .4s
+        margin: auto !important
+        position: absolute
+        top: 50%
+        left: 50%
+
+        max-width: 463px
+        width: calc( 100% - 40px )
+        padding: 70px 30px
+        transform: translate(-50%, -40%)
+
+    &__close
+        position: absolute
+        color: $white
+        line-height: 30px
+        font-size: 40px
+        font-weight: 300
+        font-family: "Inter", sans-serif
+        top: -40px
+        right: -35px
+        pointer-events: none
+        .ic
+            width: 24px
+            height: 24px
+
+    h2
+        font-size: 48px
+        gap: 5px
+        line-height: 100%
+        margin: 0 0 15px
+        text-align: center
+        color: $prime
+        text-transform: uppercase
+        font-weight: normal
+
+    .btn
+        width: 100%
+        padding: 21px
+
+    p
+        font-size: 18px
+        text-align: center
+        margin: 0 auto 15px
+
+    &.is_active
+        opacity: 1
+        visibility: visible
+        & > *
+            transform: translate(-50%, -50%)
+
+    &#done
+        .modal
+            &-content
+                max-width: 535px
+                padding: 50px 20px
+
+        p
+            max-width: 357px
+
+    @media screen and ( max-width: 720px )
+        &__close
+            right: 0
+
+        &-content
+            padding: 50px 15px
+
+        &#done
+            .modal
+                &-content
+                    padding: 50px 15px
+
+            p
+                max-width: 90%
+
+        h2
+            font-size: 36px
+            display: block
+            img
+                display: block
+                margin: 0 auto 15px
+
+        p
+            font-size: 14px
+            max-width: 90%
