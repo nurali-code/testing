@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аудиоплеер</title>
+    <link rel="stylesheet" href="css/player.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="audio-player">
+        <audio class="audio-element" src="Karvon.mp3"></audio>
+        <button class="play-pause-btn"><i class="fas fa-play"></i></button>
+
+        <div class="time-container">
+            <span class="current-time">0:00</span>
+            <span class="separator"> / </span>
+            <span class="duration">0:00</span>
+        </div>
+
+        <input type="range" class="progress-bar" value="0" max="100">
+
+        <div class="volume-container">
+            <button class="volume-btn">
+                <i class="fas fa-volume-up"></i>
+            </button>
+            <input type="range" class="volume-slider" value="1" min="0" max="1" step="0.01">
+        </div>
+
+        <button class="options-btn">
+            <i class="fas fa-ellipsis-v"></i>
+        </button>
+        <div class="options-menu">
+            <a href="Karvon.mp3" download>Скачать</a>
+            <div class="speed-control">
+                <span>Скорость:</span>
+                <select class="playback-speed">
+                    <option value="0.5">0.5x</option>
+                    <option value="0.75">0.75x</option>
+                    <option value="1" selected>Обычная</option>
+                    <option value="1.5">1.5x</option>
+                    <option value="2">2x</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
