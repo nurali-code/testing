@@ -212,6 +212,14 @@ input
     &::placeholder
         color: #9E9EAB
 
+.tb
+    @media screen and ( max-width: 992px )
+        &-hide
+            display: none
+    @media screen and ( min-width: 992px )
+        &-show
+            display: none
+
 .inp-check
     position: relative
     z-index: 1

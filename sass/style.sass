@@ -3,7 +3,63 @@
 @import 'elements'
 @import 'header'
 
-	
+.breadcrumb
+    margin-bottom: 13px
+    &-list
+        gap: 3px 0
+    &-item
+        a
+            display: block
+            opacity: .5
+            font-weight: 500
+            font-size: 14px
+            line-height: 100%
+            letter-spacing: 0%
+            &::after
+                content: '/'
+                margin: 0 8px
+                opacity: .5
+
+            &:hover
+                opacity: 1
+
+        &:last-child
+            pointer-events: none
+            a
+                opacity: 1
+                &::after
+                    display: none
+
+    @media screen and ( max-width: 1100px )
+        &-item
+            a
+                font-size: 12px
+
+    @media screen and ( max-width: 720px )
+        &-item
+            a
+                font-size: 10px
+                &::after
+                    margin: 0 3px
+
+main
+    .container
+        width: calc( 100% - 40px )
+        padding: 40px 50px
+        max-width: 1360px
+        border-radius: 25px
+        background-color: $white
+        box-shadow: 0px 4px 40px 0px #12121208
+
+    @media screen and ( max-width: 1100px )
+        .container
+            padding: 20px 30px
+            border-radius: 15px
+
+    @media screen and ( max-width: 720px )
+        .container
+            padding: 15px 20px
+            box-shadow: 0px 4px 33px 0px #12121208
 
 @import 'footer'
 @import 'modal'
