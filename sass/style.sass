@@ -4,9 +4,10 @@
 @import 'header'
 
 .breadcrumb
-    margin-bottom: 13px
+    margin-bottom: 35px
     &-list
         gap: 3px 0
+
     &-item
         a
             display: block
@@ -31,11 +32,13 @@
                     display: none
 
     @media screen and ( max-width: 1100px )
+        margin-bottom: 20px
         &-item
             a
                 font-size: 12px
 
     @media screen and ( max-width: 720px )
+        margin-bottom: 13px
         &-item
             a
                 font-size: 10px
@@ -43,6 +46,7 @@
                     margin: 0 3px
 
 main
+    margin-bottom: 50px
     .container
         width: calc( 100% - 40px )
         padding: 40px 50px
@@ -52,14 +56,209 @@ main
         box-shadow: 0px 4px 40px 0px #12121208
 
     @media screen and ( max-width: 1100px )
+        margin-bottom: 30px
         .container
             padding: 20px 30px
             border-radius: 15px
 
     @media screen and ( max-width: 720px )
+        margin-bottom: 20px
         .container
             padding: 15px 20px
             box-shadow: 0px 4px 33px 0px #12121208
+
+.main
+    &-user
+        text-align: center
+        margin-bottom: 30px
+        &__ic
+            width: 85px
+            height: 85px
+            border-radius: 50%
+            margin: 0 auto 8px
+
+        &__name
+            font-weight: 700
+            line-height: 120%
+            color: $prime
+            overflow: hidden
+            text-overflow: ellipsis
+
+        &__stat
+            display: block
+            text-align: left
+            background-color: #fff
+            background-image: linear-gradient(90deg, $prime 0%, rgba(var(--prime), .8) 100%)
+            color: $white
+            padding: 13px 43px
+            margin-bottom: 30px
+            border-radius: 8px
+            &>*
+                display: block
+
+        &__active
+            margin-top: 8px
+            &::after
+                content: ''
+                display: inline-block
+                vertical-align: middle
+                width: 5px
+                height: 5px
+                border-radius: 50%
+                background-color: $green
+                margin-left: 10px
+
+    &-nav
+        .ic
+            width: 30px
+            height: 30px
+
+        &__link
+            padding: 14px 18px
+            gap: 12px
+            font-weight: 600
+            border-radius: 8px
+            &.active,
+            &:hover
+                opacity: 1
+                color: $prime
+                background-color: #F4F4F4
+                .ic
+                    stroke: $prime
+
+    &-wrap
+        &>*
+            --itemW: 278
+            --contW: 1260
+            width: calc(var(--itemW)/var(--contW)*100%)
+            &:first-child
+
+            &:last-child
+                --itemW: 932
+                margin-left: auto
+
+    &-sub
+        border: 1px solid #2F2F2F33
+        padding: 30px 40px
+        border-radius: 20px
+        &__heading
+            font-weight: 700
+            font-size: 32px
+            line-height: 100%
+            margin-bottom: 20px
+
+        &__check
+            margin-bottom: 25px
+            .ic
+                width: 24px
+                height: 24px
+
+    @media screen and ( max-width: 1100px )
+        &-sub
+            padding: 22px 28px
+            &__heading
+                font-size: 28px
+                margin-bottom: 16px
+
+            &__check
+                margin-bottom: 20px
+
+        &-user
+            margin-bottom: 22px
+            &__ic
+                width: 70px
+                height: 70px
+                margin-bottom: 4px
+
+            &__stat
+                margin-bottom: 22px
+                padding: 10px 30px
+
+            &__active
+                margin-top: 4px
+
+        &-nav
+            &__link
+                padding: 10px 15px
+
+            .ic
+                width: 26px
+                height: 26px
+
+    @media screen and ( max-width: 992px )
+        &-wrap
+            &>*
+                width: 100%
+
+        &-user
+            &__ic
+                width: 60px
+                height: 60px
+                margin-bottom: 2px
+
+            &__stat
+                width: fit-content
+                min-width: 290px
+                margin: 0 auto 20px
+
+        &-nav
+            width: calc( 100% + 60px )
+            position: relative
+            left: -30px
+            padding: 0
+            overflow-x: scroll
+            margin: 0 auto 20px
+            flex-direction: row
+            &>*
+                border-radius: 0
+                border-bottom: 1px solid rgba(var(--black), .2)
+                width: 50%
+                padding: 14px 18px
+                justify-content: center
+
+            &__link
+                &.active,
+                &:hover
+                    border-color: $prime
+                    background-color: transparent
+
+        &-sub
+            padding: 20px 25px
+            border-radius: 15px
+            &__heading
+                font-size: 24px
+                margin-bottom: 14px
+
+            &__check
+                margin-bottom: 18px
+
+    @media screen and ( max-width: 720px )
+        &-user
+            margin-bottom: 18px
+            &__stat
+                width: 100%
+                min-width: unset
+                margin: 0 auto 18px
+
+        &-nav
+            left: -20px
+            width: calc( 100% + 40px )
+            &__link
+                padding: 10px
+                gap: 8px
+
+            .ic
+                width: 22px
+                height: 22px
+
+        &-sub
+            padding: 16px 18px
+            &__heading
+                font-size: 22px
+                margin-bottom: 12px
+
+            &__check
+                margin-bottom: 16px
 
 @import 'footer'
 @import 'modal'

@@ -53,14 +53,19 @@
                 </li>
             </ul>
             <div class="accaunt fx-ac fx-je">
-                <a href="#" class="btn --md">Выйти</a>
-                <!-- <a href="#" class="link c-dark">Выйти</a>
+                <a href="#" class="link c-dark">Выйти</a>
                 <div class="profile">
-                    <button class="profile__btn"><img src="img/profile.svg" alt="profile"></button>
+                    <button class="profile__btn">
+                        <svg class="ic">
+                            <use href="img/sprite.svg#user"></use>
+                        </svg>
+                    </button>
                     <div class="profile-content">
                         <div class="profile-row fx-w fx-ac">
                             <div class="profile-accaunt fx-ac">
-                                <img src="img/profile.svg" alt="profile">
+                                <svg class="ic">
+                                    <use href="img/sprite.svg#user"></use>
+                                </svg>
                                 <span class="c-prime">info@mail.ru</span>
                             </div>
                             <a href="#" class="btn --sm">Мои ответы</a>
@@ -68,7 +73,7 @@
                         </div>
                         <a href="#" class="btn w-full">Выйти</a>
                     </div>
-                </div> -->
+                </div>
             </div>
             <button class="btn__menu"><span></span></button>
         </div>
@@ -83,8 +88,55 @@
                     <li class="breadcrumb-item"><a href="#">Пробное тестирование по экзамену на Патент</a></li>
                 </ul>
             </nav>
+
+            <div class="main-wrap fx-as fx-w">
+                <aside class="main-aside">
+                    <div class="main-user">
+                        <svg class="ic main-user__ic">
+                            <use href="img/sprite.svg#user"></use>
+                        </svg>
+                        <p class="main-user__name t-xl">anna.vdovina.0415@mail.ru</p>
+                    </div>
+                    <a href="#" class="main-user__stat">
+                        <span class="t-lg --600">БЕЗ ОГРАНИЧЕНИЙ</span>
+                        <span class="t-md main-user__active">Активна</span>
+                    </a>
+
+                    <nav class="main-nav fx-col">
+                        <a href="#" class="main-nav__link fx-ac active">
+                            <svg class="ic">
+                                <use href="img/sprite.svg#subs"></use>
+                            </svg>
+                            <span class="t-lg">Подписка</span>
+                        </a>
+                        <a href="#" class="main-nav__link fx-ac">
+                            <svg class="ic">
+                                <use href="img/sprite.svg#chat"></use>
+                            </svg>
+                            <span class="t-lg">Мои ответы</span>
+                        </a>
+                    </nav>
+                </aside>
+
+                <div class="main-content main-sub">
+                    <h1 class="main-sub__heading">Управление подпиской</h1>
+                    <p class="fx-ac g-12 main-sub__check">
+                        <svg class="ic">
+                            <use href="img/sprite.svg#check"></use>
+                        </svg>
+                        <span class="t-lg">Оформлено 8 апреля 2025</span>
+                    </p>
+                    <div class="box">
+                        <p class="t-md box__descr mb-8">Подписка</p>
+                        <h3 class="box__headline mb-12">Без ограничений</h3>
+                        <p class="box__stat t-md">Активна до 08.05.2025</p>
+                        <a href="#" class="btn w-full">Отписаться</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
+
 
     <footer class="footer">
         <div class="container fx-w fx-ac fx-jb">
@@ -103,8 +155,16 @@
                 <a href="#" class="footer-nav__link">Стоимость</a>
             </nav>
             <div class="contacts">
-                <a href="tel:+79991234567" class="contacts__link fx-ac"><img src="img/f-phone.svg" alt="Phone number">+7 999 123 45 67</a>
-                <a href="mailto:info@mail.ru" class="contacts__link fx-ac"><img src="img/f-email.svg" alt="Email address">info@mail.ru</a>
+                <a href="tel:+79991234567" class="contacts__link fx-ac">
+                    <svg class="ic">
+                        <use href="img/sprite.svg#phone"></use>
+                    </svg> +7 999 123 45 67
+                </a>
+                <a href="mailto:info@mail.ru" class="contacts__link fx-ac">
+                    <svg class="ic">
+                        <use href="img/sprite.svg#email"></use>
+                    </svg> info@mail.ru
+                </a>
             </div>
             <div class="footer-links tb-show">
                 <a href="#" class="footer-links__link">Политика конфиденциальности</a>

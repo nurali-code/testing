@@ -6,21 +6,25 @@
     outline: none
 
 :root
-    --prime: #303F9F
+    --prime: 48, 63, 159
     --white: #fff
-    --balck: #2F2F2F
+    --black: 47,47,47
     --dark: #000
     --gray: #747474
     --neutral: #C3C3C3
+    --green: #00C896
+    --red: #E61717
     --bg: #FAFAFA
 
 $alfa: rgba(0, 0, 0, 0)
-$prime: var(--prime)
-$black: var(--balck)
-$dark: var(--dark)
+$prime: rgb(var(--prime))
+$black: rgb(var(--black))
+$dark: rgb(var(--dark))
 $white: var(--white)
 $gray: var(--gray)
 $neutral: var(--neutral)
+$green: var(--green)
+$red: var(--red)
 $bg: var(--bg)
 
 body, html
@@ -48,6 +52,16 @@ body
     margin: 0 auto
     padding: 0 20px
 
+h1, h2, h3, h4, h5, h6
+    margin: 0
+    font-family: 'Alegreya Sans', sans-serif
+    font-weight: 700
+    font-size: 32px
+    line-height: 100%
+    margin: 0 0 20px
+
+h3, .h3
+
 img
     display: block
     max-width: 100%
@@ -68,9 +82,7 @@ button
 p
     font-size: 16px
     font-weight: 400
-    font-family: "Inter", sans-serif
     line-height: 115%
-    letter-spacing: 0%
     margin-bottom: 12px
     &.--md
         font-weight: 400
@@ -145,6 +157,8 @@ p
     width: 100% !important
 
 .c
+    &-gray
+        color: rgba(var(--black), .7)
     &-base
         color: $black
     &-prime
@@ -211,6 +225,137 @@ input
 
     &::placeholder
         color: #9E9EAB
+
+.mb
+    &-8
+        margin-bottom: 8px
+    &-12
+        margin-bottom: 12px
+
+.g
+    &-12
+        gap: 12px
+
+    @media screen and ( max-width: 720px )
+        &-12
+            gap: 8px
+
+.box
+    border-radius: 15px
+    padding: 25px 40px
+    background-color: rgba(var(--prime), .2)
+    &__descr
+        font-weight: 500
+        color: rgba(var(--black), .7)
+    &__headline,
+    &__heading
+        font-weight: 700
+        font-size: 28px
+        line-height: 100%
+        margin-bottom: 8px
+
+    &__headline
+        margin-bottom: 12px
+        color: $prime
+
+    &__stat
+        font-weight: 500
+        color: rgba(var(--black), .7)
+        font-size: 18px
+        &::after
+            content: ''
+            display: inline-block
+            vertical-align: middle
+            width: 10px
+            height: 10px
+            border-radius: 50%
+            background-color: rgba(59, 218, 3, 1)
+            margin: 0 0 2px 14px
+
+    .btn
+        margin-top: 22px
+
+    @media screen and ( max-width: 1100px )
+        padding: 22px 32px
+        border-radius: 10px
+        &__headline,
+        &__heading
+            font-size: 24px
+
+        .btn
+            margin-top: 18px
+
+    @media screen and ( max-width: 720px )
+        padding: 12px 18px
+        &__headline,
+        &__heading
+            font-size: 20px
+
+
+.ic
+    fill: none
+    width: 20px
+    height: 20px
+    stroke: $black
+
+.t
+    &-xl
+        font-size: 20px
+        line-height: 100%
+
+    &-lg
+        font-size: 18px
+        line-height: 100%
+
+    &-md
+        font-size: 16px
+        line-height: 100%
+
+    &-sm
+        font-size: 14px
+        line-height: 100%
+
+    &-xs
+        font-size: 12px
+        line-height: 100%
+
+    &-xxs
+        font-size: 10px
+        line-height: 100%
+
+    @media screen and ( max-width: 1100px )
+        &-xl
+            font-size: 18px
+        &-lg
+            font-size: 16px
+        &-md
+            font-size: 14px
+        &-sm
+            font-size: 12px
+        &-xs
+            font-size: 10px
+        &-xxs
+            font-size: 8px
+
+    @media screen and ( max-width: 720px )
+        &-lg
+            font-size: 14px
+        &-md
+            font-size: 12px
+        &-sm
+            font-size: 10px
+        &-xs
+            font-size: 8px
+
+[class*=" t-"]
+    &.--700
+        font-weight: 700
+
+    &.--600
+        font-weight: 600
+
+    &.--400
+        font-weight: 400
 
 .tb
     @media screen and ( max-width: 992px )
