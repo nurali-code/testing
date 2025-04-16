@@ -1,20 +1,16 @@
 .modal
-    // display: none
+    display: none
     position: fixed
     top: 0
     left: 0
     height: 100%
     width: 100vw
     z-index: 99999
-    background-color: rgba(#141414, .5)
-    backdrop-filter: blur(2px)
+    background-color: rgba(var(--black), .5)
     padding: 20px
     box-sizing: border-box
     overflow-y: scroll
-
     transition: all ease .4s
-    opacity: 0
-    visibility: hidden
 
     &-content
         min-height: 100px
@@ -25,82 +21,63 @@
         position: absolute
         top: 50%
         left: 50%
-
-        max-width: 463px
-        width: calc( 100% - 40px )
-        padding: 70px 30px
+        max-width: 689px
+        width: calc(100% - 40px)
+        padding: 50px 60px
         transform: translate(-50%, -40%)
+        border-radius: 20px
 
     &__close
         position: absolute
-        color: $white
-        line-height: 30px
-        font-size: 40px
-        font-weight: 300
-        font-family: "Inter", sans-serif
-        top: -40px
-        right: -35px
-        pointer-events: none
+        top: 20px
+        right: 20px
+        display: block
+        cursor: pointer
         .ic
-            width: 24px
-            height: 24px
+            width: 32px
+            height: 32px
 
-    h2
-        font-size: 48px
-        gap: 5px
-        line-height: 100%
+    &__heading
+        font-size: 40px
+        font-weight: 500
+        line-height: 1.2
         margin: 0 0 15px
-        text-align: center
-        color: $prime
-        text-transform: uppercase
-        font-weight: normal
+        color: #000
+
+    &__descr
+        font-size: 20px
+        font-weight: 500
+        line-height: 1.366
+        margin: 0 auto 40px
+        color: #000
 
     .btn
-        width: 100%
-        padding: 21px
-
-    p
-        font-size: 18px
-        text-align: center
-        margin: 0 auto 15px
+        min-width: 331px
+        margin: 0 auto
 
     &.is_active
+        display: block
         opacity: 1
         visibility: visible
         & > *
             transform: translate(-50%, -50%)
 
-    &#done
-        .modal
-            &-content
-                max-width: 535px
-                padding: 50px 20px
 
-        p
-            max-width: 357px
-
-    @media screen and ( max-width: 720px )
-        &__close
-            right: 0
-
+    @media screen and (max-width: 720px)
         &-content
-            padding: 50px 15px
+            padding: 35px 20px
 
-        &#done
-            .modal
-                &-content
-                    padding: 50px 15px
+        &__close
+            top: 10px
+            right: 10px
 
-            p
-                max-width: 90%
+        &__heading
+            font-size: 32px
+            margin-bottom: 10px
 
-        h2
-            font-size: 36px
-            display: block
-            img
-                display: block
-                margin: 0 auto 15px
+        &__descr
+            font-size: 16px
+            margin-bottom: 20px
 
-        p
-            font-size: 14px
-            max-width: 90%
+        .btn
+            width: 100%
