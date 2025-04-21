@@ -3,6 +3,8 @@
     background-color: white
     box-shadow: 0px 4px 40px 0px #12121208
     margin-bottom: 50px
+    position: relative
+    z-index: 11111
     .nav
         &__link
             padding: 12px 25px
@@ -209,12 +211,12 @@
         &-list
             display: none
 
-        &__btn 
+        &__btn
             &.active
                 &::after
                     transform: scaleY(-1)
 
-        &__link 
+        &__link
             font-size: 16px
             padding: 8px 20px
 
@@ -230,12 +232,12 @@
 
 .profile
     position: relative
-    z-index: 1
+    z-index: 11
     &-content
         max-width: calc( 90vw - 40px )
         position: absolute
         z-index: 1
-        top: 100%
+        top: 180%
         right: 0
         width: 618px
         border: 1px solid #2F2F2F1A
@@ -245,36 +247,64 @@
         transition: all .3s ease
         opacity: 0
         visibility: hidden
+        box-shadow: 0px 4px 42px 0px #12121214
         transform: translateY(20px)
+        .btn
+            &.w-full
+                margin-top: 30px
+
+            &[type="submit"]
+                margin-top: 15px
+
         &.active
             opacity: 1
             visibility: visible
             transform: translateY(0)
 
+    &__close
+        position: absolute
+        top: 12px
+        right: 12px
+        width: 32px
+        height: 32px
+        cursor: pointer
+        display: block
 
     &-row
         gap: 10px 20px
-        margin-bottom: 45px
+
+    &__edit
+        width: 24px
+        height: 24px
+
+    &__ic
+        width: 38px
+        height: 38px
 
     &-accaunt
         gap: 10px
         font-weight: 700
-        .ic
-            width: 38px
-            height: 38px
 
-    &__btn
+    &__btn:not(.btn)
         vertical-align: middle
         width: 56px
         height: 56px
         .ic
             width: 100%
             height: 100%
-              
+
+    @media screen and ( max-width: 1200px )
+        &-content
+            top: 140%
+
     @media screen and ( max-width: 720px )
-        &__btn
+        &__btn:not(.btn)
             width: 38px
             height: 38px
+
+        &__close
+            display: none
+        
 
         &-accaunt
             width: 100%
@@ -284,6 +314,7 @@
             right: -43px
             padding: 20px 20px
             max-width: 290px
+            .btn.w-full
+                margin-top: 20px
 
         &-row
-            margin-bottom: 25px

@@ -55,7 +55,23 @@
                 </li>
             </ul>
             <div class="accaunt fx-ac fx-je">
-                <a href="#" class="btn --md">Вход</a>
+                <div class="profile">
+                    <button class="profile__btn btn --md">Вход</button>
+                    <div class="profile-content">
+                        <svg class="ic profile__close">
+                            <use href="img/sprite.svg#close"></use>
+                        </svg>
+                        <form class="profile-row">
+                            <div class="inp-group">
+                                <svg class="ic inp-ic">
+                                    <use href="img/sprite.svg#email_r"></use>
+                                </svg>
+                                <input type="email" required="" placeholder="Введите Вашу электронную почту">
+                            </div>
+                            <button type="submit" class="btn w-full">Подтвердить</button>
+                        </form>
+                    </div>
+                </div>
             </div>
             <button class="btn__menu"><span></span></button>
         </div>

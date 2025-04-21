@@ -55,25 +55,22 @@
                 </li>
             </ul>
             <div class="accaunt fx-ac fx-je">
-                <a href="#" class="link c-dark">Выйти</a>
                 <div class="profile">
-                    <button class="profile__btn">
-                        <svg class="ic">
-                            <use href="img/sprite.svg#user"></use>
-                        </svg>
-                    </button>
+                    <button class="profile__btn btn --md">Вход</button>
                     <div class="profile-content">
-                        <div class="profile-row fx-w fx-ac">
+                        <svg class="ic profile__close">
+                            <use href="img/sprite.svg#close"></use>
+                        </svg>
+                        <div class="profile-row">
                             <div class="profile-accaunt fx-ac">
-                                <svg class="ic">
-                                    <use href="img/sprite.svg#user"></use>
-                                </svg>
                                 <span class="c-prime">info@mail.ru</span>
+                                <svg class="ic profile__edit">
+                                    <use href="img/sprite.svg#edit"></use>
+                                </svg>
                             </div>
-                            <a href="#" class="btn --sm">Мои ответы</a>
-                            <a href="#" class="link">Отписаться</a>
+                            <p class="w-full c-red t-sm">Ожидает подтверждения</p>
+                            <a href="#" class="btn w-full">Перейти на mail.ru</a>
                         </div>
-                        <a href="#" class="btn w-full">Выйти</a>
                     </div>
                 </div>
             </div>
@@ -195,7 +192,8 @@
             </div>
         </div>
     </footer>
-
+    
+    <script src="js/player.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 

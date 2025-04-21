@@ -22,9 +22,11 @@ document.querySelectorAll('.subnav__btn').forEach(btn => {
 });
 
 // Профиль
-document.querySelector('.profile__btn').addEventListener('click', function () {
-    document.querySelector('.profile-content').classList.toggle('active');
-});
+document.querySelectorAll('.profile__btn, .profile__close').forEach(btn => {
+    btn.addEventListener('click', function () {
+        document.querySelector('.profile-content').classList.toggle('active');
+    });
+})
 
 // Закрытие профиля при клике вне его
 document.addEventListener('click', function (e) {

@@ -1,120 +1,246 @@
-.audio
-    &-player
-        background-color: #ffffff
-        border-radius: 8px
-        padding: 10px 15px
-        display: flex
+.audio-player
+    background-color: rgba(var(--black),.1)
+    padding: 8px 10px
+    display: flex
+    align-items: center
+    border-radius: 50px
+    gap: 10px
+    width: 100%
+    max-width: 865px
+    position: relative
+    margin: 0 0 30px
+    --track-height: 5px
+    --thumb-size: 15px
+
+    .audio-element
+        display: none
+
+    button
+        color: #555
+        display: inline-flex
         align-items: center
-        gap: 10px
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1)
-        width: 100%
-        max-width: 450px
-        position: relative
+        gap: 5px
+        vertical-align: middle
+        .ic
+            width: 44px
+            height: 44px
+
+    button:hover
+        color: #000
+
+    .play-pause-btn
+
+    .time-container
+        font-size: 13px
+        color: #666
+        min-width: 35px
+        text-align: center
+        white-space: nowrap
+
+    @media screen and ( max-width: 992px )
+        margin-bottom: 20px
+    @media screen and ( max-width: 720px )
+        margin-bottom: 15px
+        font-size: 12px
+        gap: 5px
+        --track-height: 4px
+        --thumb-size: 12px
 
         button
-            background: none
-            border: none
-            cursor: pointer
-            padding: 5px
-            font-size: 16px
-            color: #555
+            .ic
+                width: 25px
+                height: 25px
 
-            &:hover
-                color: #000
+        & .options-menu li, & .speed-submenu li
+            padding: 5px 8px !important
 
-        .play-pause-btn i
-            font-size: 18px
+        .speed-submenu .back-btn
+            gap: 5px
+            .ic
+                width: 16px !important
+                height: 16px !important
 
-        .time-container
-            font-size: 13px
-            color: #666
-            min-width: 70px
-            text-align: center
+.audio-player .current-time,
+.audio-player .duration
+    display: inline-block
+    width: 35px
 
-        .progress-bar
-            flex-grow: 1
-            cursor: pointer
-            height: 6px
-            appearance: none
-            background: #e0e0e0
-            border-radius: 3px
-            outline: none
+.audio-player .current-time
+    text-align: right
 
-            &::-webkit-slider-thumb
-                appearance: none
-                width: 14px
-                height: 14px
-                background: #3498db
-                border-radius: 50%
-                cursor: pointer
+.audio-player .duration
+    text-align: left
 
-            &::-moz-range-thumb
-                width: 14px
-                height: 14px
-                background: #3498db
-                border-radius: 50%
-                cursor: pointer
-                border: none
+.audio-player .progress-bar,
+.audio-player .volume-slider
 
-        .volume-container
-            display: flex
-            align-items: center
+    --progress-percentage: 0%
+    border: none
+    --track-color: #2F2F2F4D
+    --fill-color: #303F9F
 
-        .volume-slider
-            width: 60px
-            height: 4px
-            cursor: pointer
-            appearance: none
-            background: #e0e0e0
-            border-radius: 2px
-            outline: none
-            margin-left: 5px
+    flex-grow: 1
+    cursor: pointer
+    height: var(--thumb-size)
+    appearance: none
+    background: transparent
+    outline: none
+    margin: 0 5px
+    padding: 0
 
-            &::-webkit-slider-thumb
-                appearance: none
-                width: 10px
-                height: 10px
-                background: #555
-                border-radius: 50%
-                cursor: pointer
+    &::-webkit-slider-runnable-track
+        height: var(--track-height)
+        background: linear-gradient(to right, var(--fill-color) var(--progress-percentage), var(--track-color) var(--progress-percentage))
+        border-radius: calc(var(--track-height) / 2)
+        box-sizing: border-box
 
-            &::-moz-range-thumb
-                width: 10px
-                height: 10px
-                background: #555
-                border-radius: 50%
-                cursor: pointer
-                border: none
+    &::-moz-range-track
+        height: var(--track-height)
+        background: linear-gradient(to right, var(--fill-color) var(--progress-percentage), var(--track-color) var(--progress-percentage))
+        border-radius: calc(var(--track-height) / 2)
+        box-sizing: border-box
+        border: none
 
-        .options-btn
-            margin-left: auto
+    &::-webkit-slider-thumb
+        appearance: none
+        width: var(--thumb-size)
+        height: var(--thumb-size)
+        background: var(--fill-color)
+        border-radius: 50%
+        cursor: pointer
+        margin-top: calc((var(--thumb-size) - var(--track-height)) / -2)
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2)
+        border: none
 
-        .options-menu
-            display: none
-            position: absolute
-            bottom: 45px
-            right: 10px
-            background-color: white
-            border-radius: 5px
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2)
-            padding: 10px
-            z-index: 10
-            font-size: 14px
+    &::-moz-range-thumb
+        width: var(--thumb-size)
+        height: var(--thumb-size)
+        background: var(--fill-color)
+        border-radius: 50%
+        cursor: pointer
+        border: none
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2)
 
-            & a, & div
-                display: block
-                padding: 5px 0
-                color: #333
-                text-decoration: none
+    &:focus::-webkit-slider-thumb
+        outline: 2px solid #9acffa
+        outline-offset: 2px
 
-            & a:hover
-                background-color: #f0f0f0
+    &:focus::-moz-range-thumb
+        outline: 2px solid #9acffa
+        outline-offset: 2px
 
-        .speed-control select
-            margin-left: 5px
-            border: 1px solid #ccc
-            border-radius: 3px
-            padding: 2px
+.audio-player .volume-container
+    display: flex
+    gap: 8px
+    align-items: center
+    position: relative
+    border-radius: 40px
+    &.active
+        padding: 0 8px 0 14px
+        background-color: rgba(var(--black), .1)
 
-    &-element
-        display: none
+.audio-player .volume-slider
+    width: 0
+    margin: 0
+    opacity: 0
+    visibility: hidden
+    transition: width 0.3s ease, opacity 0.3s ease, margin-left 0.3s ease, visibility 0.3s
+    box-sizing: border-box
+
+.audio-player .volume-container.active .volume-slider
+    width: 60px
+    opacity: 1
+    visibility: visible
+
+.audio-player .volume-slider::-webkit-slider-thumb
+    transition: background 0.2s ease
+
+.audio-player .volume-slider::-moz-range-thumb
+    transition: background 0.2s ease
+
+.audio-player .options-btn
+    margin-left: auto
+
+.audio-player .options-menu,
+.audio-player .speed-submenu
+    position: absolute
+    bottom: calc(100% + 5px)
+    right: 10px
+    background-color: white
+    border-radius: 5px
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2)
+    padding: 5px 0
+    z-index: 10
+    font-size: 14px
+    min-width: 150px
+    display: none
+
+.audio-player .options-menu.visible,
+.audio-player .speed-submenu.visible
+    display: block
+
+.audio-player .options-menu ul,
+.audio-player .speed-submenu ul
+    list-style: none
+    padding: 0
+    margin: 0
+
+.audio-player .options-menu li,
+.audio-player .speed-submenu li
+    padding: 8px 15px
+    cursor: pointer
+    display: flex
+    align-items: center
+    gap: 10px
+    position: relative
+
+.audio-player .options-menu li:hover,
+.audio-player .speed-submenu li:hover
+    background-color: #f0f0f0
+
+.audio-player .options-menu a
+    color: inherit
+    text-decoration: none
+    display: flex
+    align-items: center
+    gap: 10px
+    width: 100%
+
+.audio-player .options-menu .speed-menu-item .ic:last-child
+    margin-left: auto
+    width: 0.8em
+    height: 0.8em
+    color: #888
+
+.audio-player .speed-submenu
+    padding: 0
+
+    .back-btn
+        display: flex
+        align-items: center
+        width: 100%
+        padding: 8px 15px
+        text-align: left
+        border-bottom: 1px solid #eee
+        font-size: 14px
+        gap: 10px
+        box-sizing: border-box
+        .ic
+            width: 24px
+            height: 24px
+
+    .speed-list
+        padding: 5px 0
+
+    li .ic
+        margin-left: auto
+        color: #303F9F
+        visibility: hidden
+        width: 1em
+        height: 1em
+
+    li[aria-checked="true"] .ic
+        visibility: visible
+
+.audio-player label
+    cursor: pointer

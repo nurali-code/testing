@@ -10,6 +10,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Manrope:wght@200..800&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -63,9 +65,12 @@
                         </svg>
                     </button>
                     <div class="profile-content">
+                        <svg class="ic profile__close">
+                            <use href="img/sprite.svg#close"></use>
+                        </svg>
                         <div class="profile-row fx-w fx-ac">
                             <div class="profile-accaunt fx-ac">
-                                <svg class="ic">
+                                <svg class="ic profile__ic">
                                     <use href="img/sprite.svg#user"></use>
                                 </svg>
                                 <span class="c-prime">info@mail.ru</span>
@@ -108,8 +113,81 @@
 
                 <div class="test-questions">
                     <div class="question">
-                        <h3 class="question-title">1. Прослушайте диалог и определите, где происходит разговор. Выберите правильный ответ</h3>
-                        <audio src="audio/test.mp3" controls></audio>
+                        <h3 class="question-title">1. Прослушайте диалог и определите, где происходит разговор. Выберите
+                            правильный ответ</h3>
+
+                        <div class="audio-player">
+                            <audio class="audio-element" src="Marian-Hill.mp3"></audio>
+
+                            <button class="play-pause-btn" aria-label="Воспроизвести">
+                                <svg class="ic">
+                                    <use href="img/sprite.svg#play"></use>
+                                </svg>
+                            </button>
+                            <span class="current-time">0:00</span>
+                            <input type="range" class="progress-bar" value="0" max="100"
+                                aria-label="Прогресс воспроизведения">
+                            <span class="duration">0:00</span>
+                            <div class="volume-container">
+                                <input type="range" class="volume-slider" value="1" min="0" max="1" step="0.01"
+                                    aria-label="Ползунок громкости">
+                                <button class="volume-btn" aria-label="Управление громкостью">
+                                    <svg class="ic">
+                                        <use href="img/sprite.svg#volume"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                            <button class="options-btn" aria-label="Дополнительные опции" aria-haspopup="true"
+                                aria-expanded="false">
+                                <svg class="ic">
+                                    <use href="img/sprite.svg#dots"></use>
+                                </svg>
+                            </button>
+
+                            <div class="options-menu" role="menu">
+                                <ul>
+                                    <li role="menuitem">
+                                        <a class="download-link" href="#" download>
+                                            <svg class="ic">
+                                                <use href="img/sprite.svg#download"></use>
+                                            </svg>Скачать
+                                        </a>
+                                    </li>
+                                    <li role="menuitem" class="speed-menu-item" aria-haspopup="true">
+                                        <svg class="ic">
+                                            <use href="img/sprite.svg#speed"></use>
+                                        </svg> Скорость <svg class="ic">
+                                            <use href="img/sprite.svg#arrow-right"></use>
+                                        </svg>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="speed-submenu" role="menu" hidden>
+                                <button class="back-btn" role="menuitem">
+                                    <svg class="ic">
+                                        <use href="img/sprite.svg#arrow-left"></use>
+                                    </svg> Назад
+                                </button>
+                                <ul class="speed-list">
+                                    <li role="menuitemradio" aria-checked="false" data-speed="0.5">0.5x <svg class="ic">
+                                        <use href="img/sprite.svg#selected"></use>
+                                    </svg></li>
+                                    <li role="menuitemradio" aria-checked="false" data-speed="0.75">0.75x <svg class="ic">
+                                        <use href="img/sprite.svg#selected"></use>
+                                    </svg></li>
+                                    <li role="menuitemradio" aria-checked="true" data-speed="1.0">Обычная <svg class="ic">
+                                        <use href="img/sprite.svg#selected"></use>
+                                    </svg></li>
+                                    <li role="menuitemradio" aria-checked="false" data-speed="1.5">1.5x <svg class="ic">
+                                        <use href="img/sprite.svg#selected"></use>
+                                    </svg></li>
+                                    <li role="menuitemradio" aria-checked="false" data-speed="2.0">2.0x <svg class="ic">
+                                        <use href="img/sprite.svg#selected"></use>
+                                    </svg></li>
+                                </ul>
+                            </div>
+                        </div>
+
                         <div class="question-options">
                             <p class="t-xl question__heading">Они говорят</p>
                             <div class="option">
@@ -204,7 +282,6 @@
         </section>
     </main>
 
-
     <footer class="footer">
         <div class="container fx-w fx-ac fx-jb">
             <div class="footer-col">
@@ -240,6 +317,7 @@
         </div>
     </footer>
 
+    <script src="js/player.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 
