@@ -55,27 +55,7 @@
                 </li>
             </ul>
             <div class="accaunt fx-ac fx-je">
-                <a href="#" class="link c-dark">Выйти</a>
-                <div class="profile">
-                    <button class="profile__btn">
-                        <svg class="ic">
-                            <use href="img/sprite.svg#user"></use>
-                        </svg>
-                    </button>
-                    <div class="profile-content">
-                        <div class="profile-row fx-w fx-ac">
-                            <div class="profile-accaunt fx-ac">
-                                <svg class="ic">
-                                    <use href="img/sprite.svg#user"></use>
-                                </svg>
-                                <span class="c-prime">info@mail.ru</span>
-                            </div>
-                            <a href="#" class="btn --sm">Мои ответы</a>
-                            <a href="#" class="link">Отписаться</a>
-                        </div>
-                        <a href="#" class="btn w-full">Выйти</a>
-                    </div>
-                </div>
+                <a href="#" class="btn --md">Вход</a>
             </div>
             <button class="btn__menu"><span></span></button>
         </div>
@@ -92,13 +72,13 @@
                     </ul>
                 </nav>
 
-                <h2 class="box__heading c-red">Вы не сдали экзамен!</h2>
-                <p class="box__descr t-xl">Хотите увидеть свои ошибки? Воспользуйтесь единоразовой услугой тестирования
+                <h2 class="subs__heading c-red">Вы не сдали экзамен!</h2>
+                <p class="subs__descr t-xl">Хотите увидеть свои ошибки? Воспользуйтесь единоразовой услугой тестирования
                     и мы покажем ваши ошибки или оплатите подписку и пользуйтесь тестированием без ограничений!</p>
 
                 <form class="subs-form">
                     <div class="subs-options fx-jc g-20">
-                        <div class="subs-card">
+                        <div class="subs-card fx-col fx-je">
                             <h3 class="subs-card__title">Разово</h3>
                             <p class="subs-card__price">299 ₽</p>
                             <p class="subs-card__descr">Вы можете увидеть свои ошибки один раз, с повторным
@@ -111,7 +91,10 @@
                             </label>
                         </div>
 
-                        <div class="subs-card --active">
+                        <div class="subs-card --prime fx-col fx-je">
+                            <svg class="ic subs-card__ic">
+                                <use href="img/sprite.svg#prime"></use>
+                            </svg>
                             <h3 class="subs-card__title">Без ограничений</h3>
                             <p class="subs-card__price">495 ₽/мес</p>
                             <p class="subs-card__descr">Оплатив подписку, Вы можете увидеть свои ошибки любое кол-во
@@ -125,32 +108,29 @@
                         </div>
                     </div>
 
-                    <div class="input-group fx-ac">
-                        <div class="input-icon">
-                            <svg class="ic">
-                                <use href="img/sprite.svg#email"></use>
-                            </svg>
-                        </div>
-                        <input type="email" placeholder="Введите Вашу электронную почту">
-                        <button class="btn --sm">Отправить</button>
+                    <div class="inp-group fx-ac fx-jb">
+                        <svg class="ic inp-ic">
+                            <use href="img/sprite.svg#email_r"></use>
+                        </svg>
+                        <input type="email" required placeholder="Введите Вашу электронную почту">
+                        <button class="btn --sm"><svg class="ic">
+                                <use href="img/sprite.svg#arrow-right"></use>
+                            </svg></button>
                     </div>
 
                     <div class="inp-check">
                         <input type="checkbox" id="agree">
-                        <label for="agree">Вы соглашаетесь на условия обработки персональных данных</label>
+                        <label for="agree">Вы соглашаетесь на <a href="#">условия обработки персональных
+                                данных</a></label>
                     </div>
+                    <p class="subs-info t-sm">
+                        Подписка на сервис составляет 495р/ месяц, по истечению месяца подписка возобновляется и оплата
+                        производится повторно. Отписка доступна в любой момент. Источником информационного сервиса
+                        является
+                        ФГБНУ «ФИПИ»
+                    </p>
                 </form>
 
-                <p class="subs-info t-sm">Подписка на сервис составляет 495р/ месяц, по истечению месяца
-                    подписка возобновляется и оплата производится повторно. Отписка доступна в любой момент. Источником
-                    информационного сервиса является ФГБНУ «ФИПИ»</p>
-
-                <button class="btn next-btn">
-                    <span>Далее</span>
-                    <svg class="ic">
-                        <use href="img/sprite.svg#arrow-right"></use>
-                    </svg>
-                </button>
             </div>
         </section>
     </main>
@@ -190,21 +170,7 @@
         </div>
     </footer>
 
-    <div class="modal" id="cancel">
-        <div class="modal-content">
-            <button class="modal__close">
-                <svg class="ic">
-                    <use href="img/sprite.svg#close"></use>
-                </svg>
-            </button>
-            <h2 class="modal__heading">Отмена подписки</h2>
-            <p class="modal__descr">Минимальный срок использования подписки 1 месяц, <br> отписка будет доступна с
-                08.05.2025</p>
-            <button class="btn">Понятно</button>
-        </div>
-    </div>
-
-    <script src="js/jquery-3.6.0.min.js"></script>
+    
     <script src="js/script.js"></script>
 </body>
 

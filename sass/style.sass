@@ -378,7 +378,6 @@ main
         font-size: 28px
 
 .test
-
     &-variant
         font-weight: 500
         font-size: 28px
@@ -597,120 +596,150 @@ main
         &-item
             padding: 8px 0
 
-.input-group
-    border: 1px solid rgba(var(--black), .15)
-    border-radius: 8px
-    padding: 10px
-    margin-bottom: 30px
-    .input-icon
-        padding: 10px
-        .ic
-            width: 24px
-            height: 24px
-            stroke: $prime
-    input
-        border: none
-        height: auto
-        padding: 0
-        &::placeholder
+.subs
+    &__heading
+        text-align: center
+        font-weight: 500
+        font-size: 55px
+
+    &__descr
+        text-align: center
+        font-weight: 500
+        line-height: 120%
+
+    &-form
+        max-width: 689px
+        margin: 60px auto 0
+
+    &-options
+        margin-bottom: 30px
+        gap: 15px
+
+    &-card
+        border-radius: 12px
+        padding: 22px 35px
+        width: 337px
+        position: relative
+        z-index: 1
+        &.--prime
+            padding-top: 0
+
+        &__ic
+            width: 35px
+            height: 40px
+            filter: drop-shadow(4px 4px 7.1px #00000014)
+            margin-bottom: 8px
+
+        &__title
+            font-weight: 600
+            font-size: 20px
+            line-height: 1.366
+            margin-bottom: 8px
+            color: $prime
+
+        &__price
+            font-weight: 700
+            font-size: 40px
+            line-height: 1.366
+            margin-bottom: 8px
+
+        &__descr
+            font-weight: 500
+            font-size: 14px
+            line-height: 1.366
+            margin: 0
             color: rgba(var(--black), .5)
 
-.subs-options
-    margin-bottom: 30px
-    gap: 15px
-
-.subs-card
-    border: 1.5px solid rgba(var(--black), .2)
-    border-radius: 12px
-    padding: 22px 35px
-    width: 337px
-    position: relative
-    z-index: 1
-    &.--active
-        border-width: 3px
-        border-color: $prime
-
-        .subs-card__check
-            position: absolute
-            left: 41px
-            top: 0
-            transform: translateY(-50%)
-            .ic
-                width: 12px
-                height: 12px
-                stroke: $white
-
-    &__title
-        font-weight: 600
-        font-size: 20px
-        line-height: 1.366
-        margin-bottom: 8px
-    &__price
-        font-weight: 700
-        font-size: 40px
-        line-height: 1.366
-        margin-bottom: 8px
-    &__descr
-        font-weight: 500
-        font-size: 14px
-        line-height: 1.366
-        color: rgba(var(--black), .5)
-
-    label
-        display: block
-        position: absolute
-        right: 12px
-        top: 16px
-        border-radius: 50%
-        .ic
+        label
             display: block
-            width: 27px
-            height: 27px
-            transform: scale(.98)
-    input
-        position: absolute
-        top: 0
-        left: 0
-        opacity: 0
-        width: 100%
-        height: 100%
-        z-index: 11
-        &:checked ~ label
-            background-color: $prime
+            position: absolute
+            top: 0
+            left: 0
+            border: 1.5px solid rgba(var(--black), .2)
+            width: 100%
+            height: 100%
+            border-radius: 12px
+            transition: border-color .3s ease
             .ic
-                opacity: 1
+                display: block
+                width: 27px
+                height: 27px
+                position: absolute
+                top: 16px
+                right: 12px
+                border-radius: 50%
+                border: 1px solid rgba(var(--black), .2)
 
-.subs-form
-    margin-bottom: 30px
-    .subs-info
+        input
+            position: absolute
+            top: 0
+            left: 0
+            opacity: 0
+            width: 100%
+            height: 100%
+            z-index: 11
+            &:checked ~ label
+                border-color: $prime
+                border-width: 3px
+                .ic
+                    border-color: $alfa
+                    fill: $prime
+                    opacity: 1
+
+    &-info
+        margin-top: 16px
         color: rgba(var(--black), .4)
-        margin-bottom: 30px
 
-@media screen and (max-width: 1100px)
-    .subs-card
-        width: 300px
-        padding: 20px 30px
-        &__title
-            font-size: 18px
-        &__price
-            font-size: 32px
-        &__descr
-            font-size: 12px
+    @media screen and (max-width: 1100px)
+        &__heading
+            font-size: 40px
 
-@media screen and (max-width: 720px)
-    .subs-options
-        flex-direction: column
-    .subs-card
-        width: 100%
-        padding: 15px 20px
-        &__title
-            font-size: 16px
-        &__price
+        &-card
+            width: 300px
+            padding: 20px 30px
+            &__title
+                font-size: 18px
+            &__price
+                font-size: 32px
+            &__descr
+                font-size: 12px
+
+    @media screen and (max-width: 720px)
+        &__heading
             font-size: 28px
+            margin-bottom: 8px
+
         &__descr
             font-size: 12px
-        &.--active
-            &::before
-                left: 20px
-            .subs-card__check
-                left: 26px
+
+        &-form
+            margin-top: 25px
+
+        &-options
+            flex-direction: column
+
+        &-card
+            width: 100%
+            padding: 43px 25px 25px
+            &__ic
+                width: 26px
+                height: 30px
+            &__title
+                font-size: 16px
+                margin: 0
+            &__price
+                font-size: 28px
+                margin-bottom: 15px
+            &__descr
+                font-size: 12px
+            &.--active
+                &::before
+                    left: 20px
+                .subs-card__check
+                    left: 26px
+
+            input:checked~label
+                border-width: 2px
+
+        &-info
+            margin-top: 12px

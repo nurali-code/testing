@@ -133,7 +133,7 @@
                             <p class="t-md box__descr mb-8">Подписка</p>
                             <h3 class="box__headline mb-12">Без ограничений</h3>
                             <p class="box__stat t-md">Активна до 08.05.2025</p>
-                            <a href="#" class="btn w-full">Отписаться</a>
+                            <a href="#cancel" class="btn w-full">Отписаться</a>
                         </div>
                     </div>
                 </div>
@@ -178,7 +178,7 @@
 
     <div class="modal" id="cancel">
         <div class="modal-content">
-            <button class="modal__close">
+            <button class="modal__close" data-modal-close>
                 <svg class="ic">
                     <use href="img/sprite.svg#close"></use>
                 </svg>
@@ -186,11 +186,10 @@
             <h2 class="modal__heading">Отмена подписки</h2>
             <p class="modal__descr">Минимальный срок использования подписки 1 месяц, <br> отписка будет доступна с
                 08.05.2025</p>
-            <button class="btn">Понятно</button>
+            <button class="btn" data-modal-close>Понятно</button>
         </div>
     </div>
 
-    <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 

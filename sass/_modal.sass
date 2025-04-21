@@ -1,5 +1,4 @@
 .modal
-    display: none
     position: fixed
     top: 0
     left: 0
@@ -11,6 +10,9 @@
     box-sizing: border-box
     overflow-y: scroll
     transition: all ease .4s
+
+    opacity: 0
+    visibility: hidden
 
     &-content
         min-height: 100px
@@ -55,13 +57,11 @@
         min-width: 331px
         margin: 0 auto
 
-    &.is_active
-        display: block
+    &.active
         opacity: 1
         visibility: visible
         & > *
             transform: translate(-50%, -50%)
-
 
     @media screen and (max-width: 720px)
         &-content
@@ -81,3 +81,4 @@
 
         .btn
             width: 100%
+            min-width: 100%

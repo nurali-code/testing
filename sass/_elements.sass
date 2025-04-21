@@ -7,7 +7,7 @@
 
 :root
     --prime: 48, 63, 159
-    --white: #fff
+    --white: #ffffff
     --black: 47,47,47
     --dark: #000
     --gray: #747474
@@ -309,7 +309,7 @@ input
 
     &-sm
         font-size: 14px
-        line-height: 100%
+        line-height: 120%
 
     &-xs
         font-size: 12px
@@ -334,6 +334,8 @@ input
             font-size: 8px
 
     @media screen and ( max-width: 720px )
+        &-xl
+            font-size: 16px
         &-lg
             font-size: 14px
         &-md
@@ -361,51 +363,110 @@ input
         &-show
             display: none
 
-.inp-check
-    position: relative
-    z-index: 1
-    margin-bottom: 31px
-    label
-        font-weight: 500
-        font-size: 12px
-        line-height: 15px
-        display: block
+.inp
+    &-check
         position: relative
-        text-align: left
         z-index: 1
-        padding: 0 0 0 23px
-        &::before
-            content: ""
-            display: inline-block
-            position: absolute
-            box-sizing: border-box
-            left: 0
-            top: 0
-            width: 15px
-            height: 15px
-            border: 1px solid $neutral
+        label
+            font-weight: 500
+            font-size: 14px
+            line-height: 120%
+            display: block
+            position: relative
+            text-align: left
+            z-index: 1
+            padding: 1.2px 0 1.2px 32px
+            &::before
+                content: ""
+                display: inline-block
+                position: absolute
+                box-sizing: border-box
+                left: 0
+                top: 0
+                width: 19px
+                height: 19px
+                border: 1.5px solid $neutral
+                border-radius: 2px
+                background-repeat: no-repeat
+                background-position: center center
+                background-size: 0% auto
+                background-image: url('../media/check.svg')
 
-            background-repeat: no-repeat
-            background-position: center center
-            background-size: 0% auto
-            background-image: url('../media/check.svg')
+        a
+            text-decoration: underline
+
+        input
+            display: block
+            position: absolute
+            top: 0
+            left: 0
+            margin: 0
+            opacity: 0
+            padding: 0
+            min-height: 100%
+            width: 100%
+            cursor: pointer
+            height: 100%
+            z-index: 111
+            &:checked ~ label::before
+                background-size: 75% auto
+                border-color: $prime
+
+    &-group
+        margin-bottom: 12px
+        position: relative
+        gap: 10px
+        z-index: 1
+        input
+            border: 1px solid rgba(var(--black), .15)
+            border-radius: 8px
+            padding-left: 73px
+
+        .btn
+            padding: 10px
+            border-radius: 11px
+            .ic
+                stroke: $white
+
+    &-ic
+        position: absolute
+        top: 10px
+        left: 10px
+        width: 48px
+        z-index: 11
+        height: 48px
 
     input
-        display: block
-        position: absolute
-        top: 0
-        left: 0
-        margin: 0
-        opacity: 0
+        border: none
+        height: auto
         padding: 0
-        min-height: 100%
-        width: 100%
-        cursor: pointer
-        height: 100%
-        z-index: 111
-        &:checked ~ label::before
-            background-size: 75% auto
-            border-color: $prime
+        &::placeholder
+            color: rgba(var(--black), .5)
+
+    @media screen and ( max-width: 720px )
+        &-group
+            input
+                height: 40px
+                padding-left: 42px
+                font-size: 12px
+
+            .btn
+                padding: 7px
+                border-radius: 8px
+
+        &-ic
+            width: 28px
+            height: 28px
+            top: 6px
+            left: 6px
+
+        &-check
+            label
+                font-size: 10px
+                padding: 1.3px 0 1.3px 28px
+                &::before
+                    width: 16px
+                    height: 16px
 
 mark
     color: $prime
@@ -442,3 +503,6 @@ section
 @media screen and ( max-width: 720px )
     input
         font-size: 14px
+
+    .btn 
+        min-width: 100%
