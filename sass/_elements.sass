@@ -51,7 +51,9 @@ body
     width: 100%
     margin: 0 auto
     padding: 0 20px
-
+    &.min-h
+        min-height: 70vh
+        
 h1, h2, h3, h4, h5, h6
     margin: 0
     font-family: 'Alegreya Sans', sans-serif
@@ -59,8 +61,10 @@ h1, h2, h3, h4, h5, h6
     font-size: 32px
     line-height: 100%
     margin: 0 0 20px
-
-h3, .h3
+    @media screen and ( max-width: 1100px )
+        margin-bottom: 15px
+    @media screen and ( max-width: 720px )
+        margin-bottom: 10px
 
 img
     display: block
@@ -335,7 +339,7 @@ input
 
     @media screen and ( max-width: 720px )
         &-xl
-            font-size: 16px
+            font-size: 12px
         &-lg
             font-size: 14px
         &-md

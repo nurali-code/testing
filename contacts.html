@@ -62,8 +62,8 @@
     </header>
 
     <main class="main">
-        <section>
-            <div class="container">
+        <section class="contacts">
+            <div class="container min-h">
                 <nav class="breadcrumb">
                     <ul class="breadcrumb-list fx-ac fx-w">
                         <li class="breadcrumb-item"><a href="#">Главная</a></li>
@@ -72,64 +72,29 @@
                     </ul>
                 </nav>
 
-                <h2 class="subs__heading c-red">Вы не сдали экзамен!</h2>
-                <p class="subs__descr t-xl">Хотите увидеть свои ошибки? Воспользуйтесь единоразовой услугой тестирования
-                    и мы покажем ваши ошибки или оплатите подписку и пользуйтесь тестированием без ограничений!</p>
+                <h2 class="headline">Контакты</h2>
+                <p class="contacts__text t-xl">
+                    Если у вас возникли трудности, нестандартные вопросы, желание узнать состояние заказа, вопросы по
+                    возврату денежных средств
+                </p>
 
-                <form class="subs-form">
-                    <div class="subs-options fx-jc g-20">
-                        <div class="subs-card fx-col fx-je">
-                            <h3 class="subs-card__title">Разово</h3>
-                            <p class="subs-card__price">299 ₽</p>
-                            <p class="subs-card__descr">Вы можете увидеть свои ошибки один раз, с повторным
-                                тестированием необходимо повторно оплатить услугу</p>
-                            <input type="radio" checked name="subs" id="subs-1">
-                            <label for="subs-1">
-                                <svg class="ic">
-                                    <use href="img/sprite.svg#check"></use>
-                                </svg>
-                            </label>
-                        </div>
-
-                        <div class="subs-card --prime fx-col fx-je">
-                            <svg class="ic subs-card__ic">
-                                <use href="img/sprite.svg#prime"></use>
-                            </svg>
-                            <h3 class="subs-card__title">Без ограничений</h3>
-                            <p class="subs-card__price">495 ₽/мес</p>
-                            <p class="subs-card__descr">Оплатив подписку, Вы можете увидеть свои ошибки любое кол-во
-                                раз без каких-либо ограничений!</p>
-                            <input type="radio" name="subs" id="subs-2">
-                            <label for="subs-2">
-                                <svg class="ic">
-                                    <use href="img/sprite.svg#check"></use>
-                                </svg>
-                            </label>
-                        </div>
+                <div class="contacts-wrap fx-jc fx-w">
+                    <div class="contacts-block">
+                        <svg class="ic">
+                            <use href="img/sprite.svg#phone_r"></use>
+                        </svg>
+                        <a href="tel:+79991234567" class="contacts-block__title">+7 999 123 45 67</a>
+                        <p class="contacts-block__subtitle">ПН-ПТ: с 9:00 до 18:00</p>
                     </div>
 
-                    <div class="inp-group fx-ac fx-jb">
-                        <svg class="ic inp-ic">
+                    <div class="contacts-block">
+                        <svg class="ic">
                             <use href="img/sprite.svg#email_r"></use>
                         </svg>
-                        <input type="email" required placeholder="Введите Вашу электронную почту">
-                        <button class="btn --sm"><svg class="ic">
-                                <use href="img/sprite.svg#arrow-right"></use>
-                            </svg></button>
+                        <a href="mailto:info@mail.ru" class="contacts-block__title">info@mail.ru</a>
+                        <p class="contacts-block__subtitle">По всем вопросам, связанным с работой сервиса</p>
                     </div>
-
-                    <div class="inp-check">
-                        <input type="checkbox" id="agree">
-                        <label for="agree">Вы соглашаетесь на <a href="#">условия обработки персональных
-                                данных</a></label>
-                    </div>
-                    <p class="subs-info t-sm">
-                        Подписка на сервис составляет 495р/ месяц, по истечению месяца подписка возобновляется и оплата
-                        производится повторно. Отписка доступна в любой момент. Источником информационного сервиса
-                        является
-                        ФГБНУ «ФИПИ»
-                    </p>
-                </form>
+                </div>
 
             </div>
         </section>
@@ -170,7 +135,6 @@
         </div>
     </footer>
 
-    
     <script src="js/script.js"></script>
 </body>
 
