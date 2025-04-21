@@ -444,16 +444,33 @@ main
             margin-top: 30px
             gap: 10px
             flex-direction: column
+
 .question
     margin-bottom: 40px
     &__heading
         margin-bottom: 8px
         font-weight: 500
+
+    &-list
+        padding-left: 25px
+        li
+            margin-bottom: 5px
+            &:last-child
+                margin-bottom: 0
+
+            &.c-red 
+                text-decoration: line-through
+
     &:last-child
         margin-bottom: 0
 
     @media screen and (max-width: 720px)
         margin-bottom: 30px
+        &__heading,
+        &-list
+            font-size: 16px
+        &-list
+            padding-left: 20px
 
 .question-title
     font-family: 'Manrope', sans-serif
@@ -895,7 +912,7 @@ main
     line-height: 1.366
 
 .flags
-    gap: 20px
+    gap: 40px
     margin-top: 20px
 
 .flag-option
@@ -935,7 +952,7 @@ main
         font-size: 16px
 
     .flags
-        gap: 15px
+        gap: 25px
 
     .flag-option
         .flag-image
@@ -948,7 +965,7 @@ main
         font-size: 14px
 
     .flags
-        gap: 10px
+        gap: 15px
 
     .flag-option
         .flag-circle
