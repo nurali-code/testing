@@ -170,7 +170,7 @@ p
     &-prime
         color: $prime
     &-green
-        color: $green   
+        color: $green
 
 .bg
     &-green
@@ -218,7 +218,7 @@ label
     line-height: 100%
 
 input
-    border: 1px solid #2F2F2F26
+    border: 1px solid $black
     height: 68px
     width: 100%
     font-weight: normal
@@ -398,12 +398,12 @@ input
                 top: 0
                 width: 19px
                 height: 19px
-                border: 1.5px solid $neutral
+                border: 1.5px solid rgba(#AFAFAF, .3)
                 border-radius: 2px
                 background-repeat: no-repeat
                 background-position: center center
                 background-size: 0% auto
-                background-image: url('../media/check.svg')
+                background-image: url('../img/check.svg')
 
         a
             text-decoration: underline
@@ -422,8 +422,7 @@ input
             height: 100%
             z-index: 111
             &:checked ~ label::before
-                background-size: 75% auto
-                border-color: $prime
+                background-size: 100% auto
 
     &-group
         margin-bottom: 12px
@@ -431,7 +430,6 @@ input
         gap: 10px
         z-index: 1
         input
-            border: 1px solid rgba(var(--black), .15)
             border-radius: 8px
             padding-left: 73px
 
@@ -517,5 +515,5 @@ section
     input
         font-size: 14px
 
-    .btn 
+    .btn
         min-width: 100%
