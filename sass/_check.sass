@@ -1,0 +1,33 @@
+[data-toggle="show"]
+    cursor: pointer
+    &:hover
+        opacity: .7
+
+[data-target="show"]
+    display: none
+    opacity: 0
+    &.is_active
+        display: block
+        opacity: 1
+        animation: fadeIn .3s ease forwards
+
+.profile-row
+    display: block
+    opacity: 1
+    transition: opacity .3s ease
+    &.is_hide
+        display: none
+        opacity: 0
+        animation: fadeOut .3s ease forwards
+
+@keyframes fadeOut
+    0%
+        opacity: 1
+    100%
+        opacity: 0
+
+@keyframes fadeIn
+    0%
+        opacity: 0
+    100%
+        opacity: 1

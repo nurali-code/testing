@@ -61,7 +61,16 @@
                         <svg class="ic profile__close">
                             <use href="img/sprite.svg#close"></use>
                         </svg>
-                        <div class="profile-row">
+                        <form class="profile-row">
+                            <div class="inp-group">
+                                <svg class="ic inp-ic">
+                                    <use href="img/sprite.svg#email_r"></use>
+                                </svg>
+                                <input type="email" required="" placeholder="Введите Вашу электронную почту">
+                            </div>
+                            <a href="#" data-toggle="show" class="btn w-full">Подтвердить</a>
+                        </form>
+                        <div class="profile-row" data-target="show">
                             <div class="profile-accaunt fx-ac">
                                 <span class="c-prime">info@mail.ru</span>
                                 <svg class="ic profile__edit">

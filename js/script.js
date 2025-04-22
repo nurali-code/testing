@@ -147,4 +147,25 @@ mModals.forEach(el => {
     });
 });
 
+const toggleElements = document.querySelectorAll('[data-toggle="show"]');
+toggleElements.forEach(function(element) {
+    element.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const parentRow = this.closest('.profile-row');
+        
+        const targetId = this.getAttribute('data-toggle');
+        console.log(targetId);
+        const targetElement = document.querySelector(`[data-target="${targetId}"]`);
+        
+        if (parentRow && targetElement) {
+            // Скрываем родительский элемент
+            slideUp(parentRow, 300);
+            
+            // После завершения анимации скрытия показываем целевой элемент
+            slideDown(targetElement, 300);
+        }
+    });
+});
+
 
