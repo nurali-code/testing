@@ -136,6 +136,59 @@ mClose.forEach(el => {
     });
 });
 
+const progressBars = document.querySelectorAll('.test-progress-bar span');
+const progressTexts = document.querySelectorAll('.test-progress .t-md:last-child');
+let currentProgress = 0;
+const progressStep = 100 / progressBars.length;
+
+progressBars.forEach((bar, index) => {
+    currentProgress += progressStep;
+    bar.style.width = `${currentProgress}%`;
+    progressTexts[index].textContent = `${Math.round(currentProgress)}%`;
+});
+
+// QA
+// Функция для обработки URL и открытия соответствующего блока
+function handleQaNavigation() {
+    const hash = window.location.hash;
+    const qaSections = document.querySelectorAll('[data-qa]');
+    const main = document.querySelector('main.main');
+
+    qaSections.forEach(section => {
+        section.classList.remove('active');
+    });
+
+    if (hash && hash.includes('qa-')) {
+        const targetSection = document.querySelector(hash);
+        if (targetSection && targetSection.hasAttribute('data-qa')) {
+            targetSection.classList.add('active');
+            main.scrollIntoView({ behavior: 'smooth' });
+        } else { 
+            qaSections[0].classList.add('active');
+            main.scrollIntoView({ behavior: 'smooth' });
+        }
+    } else { 
+        qaSections[0].classList.add('active');
+        main.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+// Обработка навигации по кнопкам
+const qaBtns = document.querySelectorAll('[data-qa-next]');
+qaBtns.forEach(btn => {
+    btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        const nextQa = this.getAttribute('href');
+        window.location.hash = nextQa;
+    });
+});
+
+// Обработка изменения URL
+window.addEventListener('hashchange', handleQaNavigation);
+
+// Инициализация при загрузке страницы
+document.addEventListener('DOMContentLoaded', handleQaNavigation);
+
 // Закрытие модального окна при клике вне его содержимого
 mModals.forEach(el => {
     el.addEventListener('click', (event) => {
@@ -148,20 +201,20 @@ mModals.forEach(el => {
 });
 
 const toggleElements = document.querySelectorAll('[data-toggle="show"]');
-toggleElements.forEach(function(element) {
-    element.addEventListener('click', function(e) {
+toggleElements.forEach(function (element) {
+    element.addEventListener('click', function (e) {
         e.preventDefault();
-        
+
         const parentRow = this.closest('.profile-row');
-        
+
         const targetId = this.getAttribute('data-toggle');
         console.log(targetId);
         const targetElement = document.querySelector(`[data-target="${targetId}"]`);
-        
+
         if (parentRow && targetElement) {
             // Скрываем родительский элемент
             slideUp(parentRow, 300);
-            
+
             // После завершения анимации скрытия показываем целевой элемент
             slideDown(targetElement, 300);
         }

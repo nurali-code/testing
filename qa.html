@@ -87,7 +87,7 @@
     </header>
 
     <main class="main">
-        <section>
+        <section id="qa-1" class="active" data-qa>
             <div class="container">
                 <div class="fx-ac fx-w">
                     <nav class="breadcrumb">
@@ -170,20 +170,22 @@
                                 </button>
                                 <ul class="speed-list">
                                     <li role="menuitemradio" aria-checked="false" data-speed="0.5">0.5x <svg class="ic">
-                                        <use href="img/sprite.svg#selected"></use>
-                                    </svg></li>
-                                    <li role="menuitemradio" aria-checked="false" data-speed="0.75">0.75x <svg class="ic">
-                                        <use href="img/sprite.svg#selected"></use>
-                                    </svg></li>
-                                    <li role="menuitemradio" aria-checked="true" data-speed="1.0">Обычная <svg class="ic">
-                                        <use href="img/sprite.svg#selected"></use>
-                                    </svg></li>
+                                            <use href="img/sprite.svg#selected"></use>
+                                        </svg></li>
+                                    <li role="menuitemradio" aria-checked="false" data-speed="0.75">0.75x <svg
+                                            class="ic">
+                                            <use href="img/sprite.svg#selected"></use>
+                                        </svg></li>
+                                    <li role="menuitemradio" aria-checked="true" data-speed="1.0">Обычная <svg
+                                            class="ic">
+                                            <use href="img/sprite.svg#selected"></use>
+                                        </svg></li>
                                     <li role="menuitemradio" aria-checked="false" data-speed="1.5">1.5x <svg class="ic">
-                                        <use href="img/sprite.svg#selected"></use>
-                                    </svg></li>
+                                            <use href="img/sprite.svg#selected"></use>
+                                        </svg></li>
                                     <li role="menuitemradio" aria-checked="false" data-speed="2.0">2.0x <svg class="ic">
-                                        <use href="img/sprite.svg#selected"></use>
-                                    </svg></li>
+                                            <use href="img/sprite.svg#selected"></use>
+                                        </svg></li>
                                 </ul>
                             </div>
                         </div>
@@ -229,12 +231,161 @@
                     </div>
                 </div>
 
-                <a href="./qa-2.html" class="btn next-btn">
+                <a href="#qa-2" class="btn next-btn" data-qa-next>
                     <span>Далее</span>
                     <svg class="ic">
                         <use href="img/sprite.svg#arrow-right"></use>
                     </svg>
                 </a>
+            </div>
+        </section>
+
+        <section id="qa-2" data-qa>
+            <div class="container">
+                <div class="fx-ac fx-w">
+                    <nav class="breadcrumb">
+                        <ul class="breadcrumb-list fx-ac fx-w">
+                            <li class="breadcrumb-item"><a href="./subscription.html">Главная</a></li>
+                            <li class="breadcrumb-item"><a href="./answers.html">Патент</a></li>
+                            <li class="breadcrumb-item"><a href="./answers.html">Пробное тестирование по экзамену на
+                                    Патент</a></li>
+                        </ul>
+                    </nav>
+                    <div class="test-progress fx-ac">
+                        <span class="t-md">Прогресс</span>
+                        <div class="test-progress-bar">
+                            <span style="width: 10%"></span>
+                        </div>
+                        <span class="t-md">10%</span>
+                    </div>
+                </div>
+
+                <h1 class="headline test__headline">Пробное тестирование по экзамену на Патент</h1>
+                <h2 class="test-variant">Вариант №1</h2>
+
+
+                <div class="test-questions">
+                    <div class="question">
+                        <h3 class="question-title">3. Прочитайте текст и вставьте пропущенное слово</h3>
+                        <blockquote class="announcement">
+                            <p>Батыр приехал из Узбекистана. Батыр – строитель.<br><br>
+                                Впишите нужное слово в анкету.<br><br>
+                                Анкета<br>
+                                1. Как Вас зовут? Меня зовут Батыр.<br>
+                                2. Откуда Вы приехали? Я приехал из Узбекистана.<br>
+                                3. Кто Вы по профессии? Я&nbsp;________________</p>
+                        </blockquote>
+                        <div class="question-options">
+                            <input type="text" class="answer-input" placeholder="Ответ...">
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h3 class="question-title">4. Укажите флаг Российской Федерации</h3>
+                        <div class="flags fx-w fx-ac">
+                            <div class="flag-option">
+                                <input type="radio" name="q4" id="q4-1">
+                                <label for="q4-1" class="fx-as">
+                                    <div class="flag-circle"></div>
+                                    <img src="img/ru.png" alt="ru" class="flag-image">
+                                </label>
+                            </div>
+                            <div class="flag-option">
+                                <input type="radio" name="q4" id="q4-2">
+                                <label for="q4-2" class="fx-as">
+                                    <div class="flag-circle"></div>
+                                    <img src="img/tu.png" alt="tur" class="flag-image">
+
+                                </label>
+                            </div>
+                            <div class="flag-option">
+                                <input type="radio" name="q4" id="q4-3">
+                                <label for="q4-3" class="fx-as">
+                                    <div class="flag-circle"></div>
+                                    <img src="img/en.png" alt="tur" class="flag-image">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#qa-3" class="btn next-btn" data-qa-next>
+                    <span>Далее</span>
+                    <svg class="ic">
+                        <use href="img/sprite.svg#arrow-right"></use>
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+        <section id="qa-3" data-qa>
+            <div class="container">
+                <nav class="breadcrumb">
+                    <ul class="breadcrumb-list fx-ac fx-w">
+                        <li class="breadcrumb-item"><a href="#">Главная</a></li>
+                        <li class="breadcrumb-item"><a href="#">Патент</a></li>
+                        <li class="breadcrumb-item"><a href="#">Пробное тестирование по экзамену на Патент</a></li>
+                    </ul>
+                </nav>
+
+                <h2 class="subs__heading c-red">Вы не сдали экзамен!</h2>
+                <p class="subs__descr t-xl">Хотите увидеть свои ошибки? Воспользуйтесь единоразовой услугой тестирования
+                    и мы покажем ваши ошибки или оплатите подписку и пользуйтесь тестированием без ограничений!</p>
+
+                <form class="subs-form">
+                    <div class="subs-options fx-jc g-20">
+                        <div class="subs-card fx-col fx-je">
+                            <h3 class="subs-card__title">Разово</h3>
+                            <p class="subs-card__price">299 ₽</p>
+                            <p class="subs-card__descr">Вы можете увидеть свои ошибки один раз, с повторным
+                                тестированием необходимо повторно оплатить услугу</p>
+                            <input type="radio" name="subs" id="subs-1">
+                            <label for="subs-1">
+                                <svg class="ic">
+                                    <use href="img/sprite.svg#check"></use>
+                                </svg>
+                            </label>
+                        </div>
+
+                        <div class="subs-card --prime fx-col fx-je">
+                            <svg class="ic subs-card__ic">
+                                <use href="img/sprite.svg#prime"></use>
+                            </svg>
+                            <h3 class="subs-card__title">Без ограничений</h3>
+                            <p class="subs-card__price">495 ₽/мес</p>
+                            <p class="subs-card__descr">Оплатив подписку, Вы можете увидеть свои ошибки любое кол-во
+                                раз без каких-либо ограничений!</p>
+                            <input type="radio" checked name="subs" id="subs-2">
+                            <label for="subs-2">
+                                <svg class="ic">
+                                    <use href="img/sprite.svg#check"></use>
+                                </svg>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="inp-group fx-ac fx-jb">
+                        <svg class="ic inp-ic">
+                            <use href="img/sprite.svg#email_r"></use>
+                        </svg>
+                        <input type="email" required placeholder="Введите Вашу электронную почту">
+                        <button class="btn --sm"><svg class="ic">
+                                <use href="img/sprite.svg#arrow-right"></use>
+                            </svg></button>
+                    </div>
+
+                    <div class="inp-check">
+                        <input type="checkbox" id="agree" checked>
+                        <label for="agree">Вы соглашаетесь на <a href="#">условия обработки персональных
+                                данных</a></label>
+                    </div>
+                    <p class="subs-info t-sm">
+                        Подписка на сервис составляет 495р/ месяц, по истечению месяца подписка возобновляется и оплата
+                        производится повторно. Отписка доступна в любой момент. Источником информационного сервиса
+                        является
+                        ФГБНУ «ФИПИ»
+                    </p>
+                </form>
             </div>
         </section>
 

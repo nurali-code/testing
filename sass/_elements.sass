@@ -502,6 +502,33 @@ section
     @media screen and ( max-width: 720px )
         padding: 20px 0
 
+[data-qa]
+    display: none
+    animation: fadeLeft .3s ease forwards
+    &.active
+        display: block
+        animation: fadeRight .3s ease forwards
+
+@keyframes fadeLeft
+    0%
+        opacity: 0
+        visibility: hidden
+        transform: translateX(-20px)
+    100%
+        opacity: 1
+        transform: translateX(0px)
+        visibility: visible
+
+@keyframes fadeRight
+    0%
+        opacity: 0
+        visibility: hidden
+        transform: translateX(20px)
+    100%
+        opacity: 1
+        transform: translateX(0px)
+        visibility: visible
+
 @keyframes fadeIn
     0%
         opacity: 0
